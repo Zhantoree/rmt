@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import './App.scss';
+import star from './assets/star.png'
+import {NavLink, Route, Routes} from "react-router-dom";
+import Home from "./components/Home/Home";
+import Dc from "./components/Dc/Dc";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [switcher, setSwitcher]
+        = useState<string>('home')
+    return (
+        <div className="app">
+            <div className="burger"></div>
+            <aside>
+                <div className="aside__title"><span>Furniture AR</span></div>
+                <div className="aside_subtitle">Популярные категории</div>
+                <div className="aside_categories categories">
+                    <NavLink to={'/'}>
+                        <div className={switcher === "home" ? `category active` : `category`}
+                             onClick={() => setSwitcher('home')}>
+                            <img src={star} alt="star"/>
+                            <span>Диваны</span>
+
+                        </div>
+                    </NavLink>
+                    <NavLink to={'/dc'}>
+                        <div className={switcher === "dc" ? `category active` : `category`}
+                             onClick={() => setSwitcher('dc')}>
+                            <img src={star} alt="star"/>
+
+                            <span>Комоды и тумбы</span>
+                        </div>
+                    </NavLink>
+                </div>
+            </aside>
+            <main>
+
+                <Routes>
+                    <Route path={'/'} element={<Home/>}/>
+                    <Route path={'/dc'} element={<Dc/>}/>
+                </Routes>
+            </main>
+        </div>
+    );
 }
 
 export default App;

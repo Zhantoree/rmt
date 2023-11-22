@@ -1,0 +1,121 @@
+@import '../../mixins';
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+
+  .banner {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    @include adaptive-value('padding', 40, 15, 1);
+    @include adaptive-value('margin-top', 40, 15, 1);
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .banner__img {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      .chars {
+        width: 80%;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: var(--primary-color);
+
+        .chars__title {
+          @extend %title-font-size;
+        }
+
+        .chars__text {
+          @extend %text-font-size;
+        }
+      }
+
+      @media (max-width: 992px) {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+
+    .banner__body {
+      width: 45%;
+
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+
+      .banner__title{
+        @extend %title-font-size;
+        @include adaptive-value('margin-bottom', 15, 10, 1);
+      }
+
+      .banner__text {
+        @extend %dark-text-font-size;
+        @include adaptive-value('margin-bottom', 15, 10, 1);
+
+      }
+
+      .banner__price {
+        @extend %text-font-size;
+        @include adaptive-value('margin-bottom', 15, 10, 1);
+      }
+
+      .banner__buy {
+        width: 30%;
+        height: 2rem;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .ar {
+
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    @include adaptive-value('padding', 40, 15, 1);
+    @include adaptive-value('margin-top', 40, 15, 1);
+    @include adaptive-value('margin-bottom', 40, 15, 1);
+
+
+    .ar__title {
+      @extend %title-font-size;
+    }
+    .ar__text {
+      @extend %text-font-size;
+      @include adaptive-value('margin-bottom', 40, 15, 1);
+    }
+    .ar__play {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+
+      iframe {
+        width: 90%;
+        @include adaptive-value('height', 600, 100, 1);
+
+      }
+    }
+  }
+}
