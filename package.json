@@ -1,6 +1,7 @@
 {
   "name": "rmt",
   "version": "0.1.0",
+  "homepage": "https://Zhantoree.github.io/rmt/",
   "private": true,
   "dependencies": {
     "@react-three/drei": "^9.88.17",
@@ -24,6 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d master -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -47,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "@types/three": "^0.158.3"
+    "@types/three": "^0.158.3",
+    "gh-pages": "^6.1.0"
   }
 }
