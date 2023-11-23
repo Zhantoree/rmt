@@ -14,13 +14,13 @@ function App() {
             <div className="burger"></div>
             <aside>
                 <div className="aside__title"><span>Furniture AR</span></div>
-                <div className="aside_subtitle">Популярные категории</div>
+                <div className="aside_subtitle">Popular categories</div>
                 <div className="aside_categories categories">
                     <NavLink to={'/'}>
                         <div className={switcher === "home" ? `category active` : `category`}
                              onClick={() => setSwitcher('home')}>
                             <img src={star} alt="star"/>
-                            <span>Диваны</span>
+                            <span>Sofa</span>
 
                         </div>
                     </NavLink>
@@ -29,7 +29,7 @@ function App() {
                              onClick={() => setSwitcher('dc')}>
                             <img src={star} alt="star"/>
 
-                            <span>Комоды и тумбы</span>
+                            <span>Dresser and drawer</span>
                         </div>
                     </NavLink>
                 </div>
@@ -37,7 +37,7 @@ function App() {
             <main>
 
                 <Routes>
-                    <Route path={'/'} element={<Home/>}/>
+                    <Route path={''} element={<Home/>}/>
                     <Route path={'/dc'} element={<Dc/>}/>
                 </Routes>
             </main>
